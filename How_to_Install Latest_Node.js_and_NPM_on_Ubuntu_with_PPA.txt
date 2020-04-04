@@ -1,0 +1,43 @@
+How to Install Latest Node.js and NPM on Ubuntu with PPA
+Step 1 – Add Node.js PPA
+
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+Step 2 – Install Node.js on Ubuntu
+
+sudo apt-get install nodejs
+
+Step 3 – Check Node.js and NPM Version
+
+node -v 
+
+npm -v
+
+
+Step 4 – Create Demo Web Server (Optional)
+
+vim server.js
+
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(3000, "127.0.0.1");
+console.log('Server running at http://127.0.0.1:3000/');
+
+node server.js
+
+debugger listening on port 5858
+Server running at http://127.0.0.1:3000/
+
+node --inspect server.js
+
+Debugger listening on ws://127.0.0.1:9229/938cf97a-a9e6-4672-922d-a22479ce4e29
+For help, see: https://nodejs.org/en/docs/inspector
+Server running at http://127.0.0.1:3000/
+
+
